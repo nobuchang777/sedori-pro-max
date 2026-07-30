@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>せどり検索Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🚀 せどり検索Pro</h1>
+  <p>ブランド名・型番を入力</p>
+
+  <input
+    id="keyword"
+    type="text"
+    placeholder="例：Needles NS244"
+  >
+
+  <h2>検索サイト</h2>
+
+  <label><input type="checkbox" class="siteCheck" value="mercari" checked> メルカリ</label><br>
+  <label><input type="checkbox" class="siteCheck" value="paypay"> Yahoo!フリマ</label><br>
+  <label><input type="checkbox" class="siteCheck" value="yahoo"> ヤフオク</label><br>
+  <label><input type="checkbox" class="siteCheck" value="rakuma"> ラクマ</label><br>
+  <label><input type="checkbox" class="siteCheck" value="zozo"> ZOZOUSED</label><br>
+  <label><input type="checkbox" class="siteCheck" value="vector"> ベクトル</label><br>
+  <label><input type="checkbox" class="siteCheck" value="kindal"> カインドオル</label><br>
+  <label><input type="checkbox" class="siteCheck" value="ragtag"> RAGTAG</label><br>
+  <label><input type="checkbox" class="siteCheck" value="second"> セカスト</label><br>
+
+  <br>
+
+  <button id="checkAll">全部選択</button>
+  <button id="uncheckAll">全部解除</button>
+  <button id="searchSelected">🚀 検索</button>
+<hr>
+
+<h2>検索</h2>
+
+<div id="resultArea"></div>
+<hr>
+
+<h2>検索履歴</h2>
+
+<div id="history"></div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
