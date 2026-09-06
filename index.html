@@ -1,54 +1,143 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>せどり検索Pro</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>せどり検索Pro Ver.2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
 
-  <h1>🚀 せどり検索Pro</h1>
-  <p>ブランド名・型番を入力</p>
+    <h1>🚀 せどり検索Pro Ver.2</h1>
+    <input
+id="brandSearch"
+type="text"
+placeholder="🔍 ブランド検索"
+style="width:100%;padding:10px;margin:15px 0;">
 
-  <input
+ <details>
+  <summary>⭐ お気に入りブランド</summary>
+
+  <div id="favoriteArea"></div>
+
+</details>
+
+<hr>
+
+<details>
+  <summary>🕘 最近見たブランド</summary>
+
+  <div id="recentArea"></div>
+
+</details>
+
+<hr>
+
+<details>
+  <summary>📚 ブランド一覧</summary>
+
+  <div id="favoriteBrands"></div>
+
+</details>
+
+    <hr>
+
+    <div id="brandInfo"></div>
+    <hr>
+
+<input
     id="keyword"
     type="text"
-    placeholder="例：Needles NS244"
+    placeholder="ブランド名・型番"
+>
+
+<button id="searchButton">
+🔍検索
+</button>
+
+<hr>
+
+<div id="searchResult"></div>
+<hr>
+
+<!-- =========================
+     仕入れ画像メモ
+========================= -->
+
+<details>
+  <summary>📷 仕入れ画像メモ</summary>
+
+  <div id="imageMemoArea">
+
+    <input
+      id="imageBrand"
+      type="text"
+      placeholder="ブランド名"
+      style="width:100%;padding:10px;margin:10px 0;"
+    >
+
+    <input
+      id="imageMemo"
+      type="text"
+      placeholder="画像のメモ"
+      style="width:100%;padding:10px;margin:10px 0;"
+    >
+
+    <input
+      id="imageFile"
+      type="file"
+      accept="image/*"
+      style="margin:10px 0;"
+    >
+
+    <button
+      id="saveImageButton"
+      type="button"
+    >
+      📷 画像を保存
+    </button>
+
+    <div id="imageSaveStatus"></div>
+    <hr>
+
+<h3>🖼️ 保存した画像</h3>
+<div style="display:flex;gap:8px;margin:10px 0;">
+
+  <input
+    id="imageBrandFilter"
+    type="text"
+    placeholder="ブランドで絞り込み"
+    style="flex:1;padding:10px;"
   >
 
-  <h2>検索サイト</h2>
+  <button
+    id="clearImageFilter"
+    type="button"
+  >
+    すべて
+  </button>
 
-  <label><input type="checkbox" class="siteCheck" value="mercari" checked> メルカリ</label><br>
-  <label><input type="checkbox" class="siteCheck" value="paypay"> Yahoo!フリマ</label><br>
-  <label><input type="checkbox" class="siteCheck" value="yahoo"> ヤフオク</label><br>
-  <label><input type="checkbox" class="siteCheck" value="rakuma"> ラクマ</label><br>
-  <label><input type="checkbox" class="siteCheck" value="zozo"> ZOZOUSED</label><br>
-  <label><input type="checkbox" class="siteCheck" value="vector"> ベクトル</label><br>
-  <label><input type="checkbox" class="siteCheck" value="kindal"> カインドオル</label><br>
-  <label><input type="checkbox" class="siteCheck" value="ragtag"> RAGTAG</label><br>
-  <label><input type="checkbox" class="siteCheck" value="second"> セカスト</label><br>
-
-  <br>
-
-  <button id="checkAll">全部選択</button>
-  <button id="uncheckAll">全部解除</button>
-  <button id="searchSelected">🚀 検索</button>
-<hr>
-
-<h2>検索</h2>
-
-<div id="resultArea"></div>
-<hr>
-
-<h2>検索履歴</h2>
-
-<div id="history"></div>
 </div>
 
-<script src="app.js"></script>
+<button
+  id="loadImagesButton"
+  type="button"
+>
+  🔄 保存画像を読み込む
+</button>
 
+<div id="savedImages"></div>
+
+  </div>
+
+</details>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js?v=20260906"></script>
 </body>
 </html>
